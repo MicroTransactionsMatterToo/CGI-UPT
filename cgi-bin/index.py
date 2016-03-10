@@ -15,3 +15,5 @@ def headers():
     print("<h1>Hello there m80</h1>")
     print("</body>")
     print("</html>")
+
+headers()
