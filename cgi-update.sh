@@ -34,6 +34,25 @@ if [[ ("$conf" == 'y') ||  ("$conf" == "yes") ]]; then
     sleep 0.5
  done
  echo "Done"
+  for items in ${DIR}/cgi-html/*
+ do
+    $(sudo mkdir -p /usr/lib/cgi-bin/cgi-html)
+    # Progress stuff
+    FILESDONE+=1
+    echo -n "Moving html "
+    echo -n "File is "
+    echo ${items}
+    $(sudo cp -f $items /usr/lib/cgi-bin/cgi-html)
+    echo ""
+    echo -n "Moved "
+    echo -n ${items}
+    echo " to /usr/lib/cgi-bin/cgi-html"
+    echo -n ${FILESDONE}
+    echo -n "/"
+    echo ${FILECOUNT}
+    sleep 0.5
+ done
+ echo "Done"
  else
     echo "Abort"
 fi
