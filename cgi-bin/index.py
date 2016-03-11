@@ -9,4 +9,6 @@ print() # Need a blank line to seperate headers cause otherwise it breaks
 def outputHTML():
     with open("/usr/lib/cgi-bin/cgi-html/base.html") as file:
         for line in file:
-            print(line)
+            print(str(line))
+
+outputHTML()
