@@ -11,4 +11,6 @@ def outputHTML():
         for line in file:
             print(str(line))
 
+def echoDerp():
+    print("<h1>derp</h1>")
 outputHTML()

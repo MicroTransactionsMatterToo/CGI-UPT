@@ -60,3 +60,14 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+/.idea/.name
+/.idea/CGI-UPT.iml
+/.idea/vcs.xml
+/.idea/dictionaries/ennis.xml
+/.idea/encodings.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/workspace.xml
+
+bower_components
+bower_components/*
