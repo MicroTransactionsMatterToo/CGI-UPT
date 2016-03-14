@@ -4,13 +4,13 @@ import cgitb
 cgitb.enable()
 
 # Headers so it won't crap itself trying to load
-print("Content-Type: text/html")
-print() # Need a blank line to seperate headers cause otherwise it breaks
 def outputHTML():
-    with open("/usr/lib/cgi-bin/cgi-html/base.html") as file:
-        for line in file:
-            print(str(line))
+  	with open("/Applications/MAMP/htdocs/base.html") as file:
+    		for line in file:
+    			if str(line) == "<!-- ip -->":
+    				print("ip here")
+    			else:
+    				stringLine = str(line)
+    				print(stringLine, end="", flush=True)
 
-def echoDerp():
-    print("<h1>derp</h1>")
 outputHTML()

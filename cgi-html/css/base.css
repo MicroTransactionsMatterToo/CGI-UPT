@@ -1,62 +1,229 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
-html, body {
-    font-family: 'Open Sans' sans-serif;
-    font-weight: 400;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    flex-flow: column;
+html {
 }
-.content {
-    width: 100%;
-    padding: 0;
+
+body {
+    /* Full page site */
     margin: 0;
-    height: 80%;
-    flex-grow: 1;
-    background-color: darkgray;
+    padding: 0;
+    /* Font */
+    font-family: "Open Sans";
+    /*noinspection CssInvalidPropertyValue*/
+    font-variant: small-bold;
+    /* Default colors */
+    color: white;
+    background-color: whitesmoke;
+    /* Default Flexbox styling */
     display: flex;
+
     flex-flow: column;
+
+    flex-grow: 1;
+
     flex-wrap: wrap;
 }
 
+.content {
+    display: inherit;
+
+    flex-flow: inherit;
+
+    flex-grow: inherit;
+
+    flex-wrap: inherit;
+
+    flex-shrink: inherit;
+    height: 100%;
+}
+
 .header {
-    z-index: 100;
-    width:100%;
+    /* Layer - To prevent it from being overriden by other objects */
+    z-index: 10;
+    /* Dimensions */
+    width: 100%;
     height: 5%;
+    /* Color */
     background-color: #0fa2fe;
+    /* Flexbox */
     display: flex;
+
     flex-flow: row;
-    align-content: flex-start;
+
     align-items: center;
 }
-#title {
+
+#title-header {
+
     flex-grow: 1;
-    flex-shrink: 1;
-    padding-left: 8px;
+    padding-left: 2%;
 }
 
 #info {
-
+    display: flex;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
+
+#info {
+    /* No reason for events on this */
     pointer-events: none;
-    z-index: 0;
+    /* Color */
+    background-color: lightgray;
+    color: white;
+    /* Font Color */
+    /* Positioning */
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: 0;
+    /* Display */
+    display: block;
+    /* Flexbox */
 }
 
 #info-notification {
+    /* No need for people to click on it */
+    pointer-events: none;
+    /* So it doesn't break */
+    position: relative;
+    /* Flexbox */
+    display: flex;
+}
+
+#notification-text {
+    flex-grow: 1;
+}
+
+#close {
+    pointer-events: all;
+    margin-top: 120%;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+#close:hover:before {
+}
+form {
+    overflow: hidden;
+}
+#close:hover:after {
+    display: none;
+    top: -100%;
+    z-index: 0;
+    pointer-events: auto;
+    color: red;
+}
+.title {
     text-align: center;
-    background-color: lightgray;
     padding: 12px;
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-    font-family: 'Open Sans';
-    font-weight: 600;
-    color: white;
+.full-width-hr {
+    width: 100%;
 }
+
+.small-line-br {
+    vertical-align: middle;
+    width: 50%;
+}
+
+p {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+
+#setup-form-div {
+    width: 100%;
+    height: 100%;
+    display: block;
+    align-self: center;
+}
+
+#setup-form {
+    width: 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    height: 100%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#submit {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    vertical-align: middle;
+    align-self: center;
+    background-color: white;
+    width: 80%;
+    margin-bottom: 5%;
+    border: none;
+    border-bottom: solid lightgray medium;
+    -webkit-transition: border-bottom 0.5s ease-in-out;
+    -moz-transition: border-bottom 0.5s ease-in-out;
+    -ms-transition: border-bottom 0.5s ease-in-out;
+    -o-transition: border-bottom 0.5s ease-in-out;
+    transition: border-bottom 0.5s ease-in-out;
+}
+#setup-form > * {
+    display: block;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    height: 40%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+#submit[type="submit"]:hover {
+    border-bottom: solid darkgray thick;
+}
+.forms-input-fields {
+    /* Preventing webkit from making it look like shit */
+    
+    /* Dimensions */
+    /* Text Formatting */
+    /* Flexbox */
+    /* Underline */
+    border: none;
+    border-bottom: solid lightgray medium;
+    /* Appearance */
+    background-color: white;
+    /* Nice transition */
+    width: 80%;
+    height: 40%;
+    transition: all 0.5s ease
+}
+
+.forms-button[type="submit"]:hover {
+    /* Change colour on hover */
+    border-bottom: solid darkgray thick;
+}
+
+.forms-input-fields[type="text"]:focus {
+    border-bottom: solid darkgray thick;
+}
+
+.content {
+    flex-grow: 1;
+    height: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+/* Signup start */
 
 #sign-up {
     padding-right: 8px;
@@ -66,19 +233,27 @@ h1, h2, h3, h4, h5, h6, p {
     color: #fe9b4f;
 }
 
+/* Signup end */
+
 /*Colours start */
+
 .c-1-font {
-    color: #202fcb;
-}
-.c-1 {
-    background-color: #202fcb;
+    color: #cbc7a6;
 }
 
+.c-1 {
+    background-color: #cbc7a6;
+}
+
+
+.content {
+    color: #8d8998;
+}
 .c-2-font {
-    color: #464d98;
+    color: #8d8998;
 }
 .c-2 {
-    background-color: #464d98;
+    background-color: #8d8998;
 }
 
 .m-font {
@@ -104,4 +279,5 @@ h1, h2, h3, h4, h5, h6, p {
 .c-4 {
     background-color: #cb5220;
 }
+
 /*Colours end */

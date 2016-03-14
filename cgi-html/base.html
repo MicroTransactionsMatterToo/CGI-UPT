@@ -1,11 +1,14 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,400' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,400' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
         <title>Reading via python</title>
         <link href="css/base.css" type="text/css" rel="stylesheet">
         <link href="css/animate.css" type="text/css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js" type="application/javascript"></script>
+        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js" type="application/javascript"></script>
         <script type="application/javascript">
             var done = 0;
             function slideHide() {
@@ -16,25 +19,61 @@
                 }
             }
             function hide() {
-                document.getElementById("info-notification").className = "animated slideOutUp";
+                document.getElementById("info").className = "animated slideOutUp";
                 setTimeout(fullhide, 1000);
                 done += 1;
             }
             function fullhide() {
-                document.getElementById("info-notification").className = "hidden";
+                document.getElementById("info").className = "hidden";
+            }
+        </script>
+        <script type="application/javascript">
+            function defaultText(fieldId, defText, state) {
             }
         </script>
     </head>
-    <html>
+    <body>
         <div id="mainHead" class="header">
-            <h1 id="title">Kohknowco VM</h1>
+            <h1 id="title-header">Kohknowco VM</h1>
             <h3 id="sign-up">Sign Up</h3>
         </div>
         <div class="content">
-            <div id="info" onclick="slideHide()">
-                <h1 id="info-notification" class="animated slideInDown">Welcome to Kohknowco VM Hub</h1>
-                <h1>Hello</h1>
+            <div id="info" class="animated slideInDown">
+                <div id="info-notification">
+                    <h1 id="notification-text">Welcome to Kohknowco VM Hub</h1>
+                    <a onclick="slideHide()" href="#">
+                        <i id="close" class="material-icons close">close</i>
+                    </a>
+                </div>
+            </div>
+            <h1 class="title">Information</h1>
+            <hr class="full-width-hr">
+            <h2 class="title">What is Kohknowco VM</h2>
+            <hr class="small-line-br">
+            <p>Kohknowco VM is a system constructer by Ennis Massey to provide a light weight LXC wrapper that allows for easy creation, management and deletion of Linux containers. Similar to Docker, this system will allow users to create containers in which servers, software and other stuff can be hosted. This system allow for the user to have free reign over their machine without affecting others files/systems.</p>
+            <h2 class="title">Who can use it?</h2>
+            <hr class="small-line-br">
+            <p>This system is primarily designed for the use of students of Ao Tawhiti Unlimited Discovery School. As such, initially, only students of this school will be able to use it. I have however made plans to create an installation script, so it can be setup on any machine at all.</p>
+            <br>
+            <hr class="full-width-hr">
+            <h2 class="title">Setup</h2>
+            <hr class="small-line-br">
+            <p>To get started with Kohknowco, simply fill in the required field below and submit them. Your Linux will then be created, and the ip will be displayed, allowing you to ssh into and configure it.</p>
+            <h2 class="title">Sign Up</h2>
+            <hr class="small-line-br">
+            <div id="setup-form-div">
+                <form id="setup-form">
+                    <input id="fname" class="forms-input-fields" type=text value="First Name">
+                    <br>
+                    <input id="lname" class="forms-input-fields" type="text" value="Last Name">
+                    <br>
+                    <input id="email-field" class="forms-input-fields" type="text" value="Email Address">
+                    <br>
+                    <input id="homebase-field" class="forms-input-fields" type="text" value="Homebase LA" >
+                    <br>
+                    <input id="submit" type="submit" value="Submit">
+                </form>
             </div>
         </div>
-    </html>
+    </body>
 </html>
